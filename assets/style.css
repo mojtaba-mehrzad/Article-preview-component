@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+
+    /* colors  */
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+
+    /*font*/
+    --font-Manrope:'Manrope';
+}
+
+/* animation */
+@keyframes anim1{
+  0%{
+      transform: translateY(4.615rem);
+      opacity: 0;
+
+  }
+  100%{
+      transform: translateY(0rem);
+      opacity: 1;
+  }
+}
+
+@keyframes anim2{
+  0%{
+      transform: translateY(4.615rem);
+      opacity: 0;
+
+  }
+  100%{
+      transform: translateY(0rem);
+      transform: rotate(45deg);
+      opacity: 1;
+
+  }
+}
+
+@keyframes anim3{
+  0%{
+      opacity: 0;
+      width: 2.461rem;
+
+  }
+  100%{
+      opacity: 1;
+      width: 100%;
+  }
+}
+
+
+
+/* CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+  
+  body {
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  html{
+    font-size: 13px;
+  }
+
+  /* css style */
+
+  body{
+    height: 100vh;
+    background-color: var(--Light-Grayish-Blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-Manrope);
+  }
+
+  .card-container{
+    position: relative;
+    max-width: 25.153rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5.692rem 1.846rem;
+    border-radius: 1.153rem;
+  }
+
+  /* card image section */
+  .card-img{
+    border-radius: 1.153rem 1.153rem 0rem 0rem;
+  }
+
+  /* card info section */
+  .card-info{
+    padding: 0rem 2.461rem;
+  }
+
+  article{
+    margin: 2.923rem 0rem;
+  }
+
+  .card-title{
+    font-weight: 700;
+    color: var(--Very-Dark-Grayish-Blue);
+    font-size: 1.23rem;
+    margin-bottom: 1.846rem;
+  }
+
+  .card-text{
+    font-weight: 500;
+    color: var(--Desaturated-Dark-Blue);
+    font-size: 1.02rem;
+  }
+
+  /* profile section */
+  .card-profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.538rem;
+  }
+
+  .card-profile-img{
+    border-radius: 50%;
+    width: 3.076rem;
+    height: 3.076rem;
+    margin-right: 1.230rem;
+  }
+
+  .card-profile-name{
+    font-weight: 700;
+    font-size: 1.076rem;
+    color: var(--Very-Dark-Grayish-Blue);
+  }
+
+  .card-profile-date{
+    font-weight: 500;
+    color: var(--Grayish-Blue);
+  }
+
+  .card-social-section{
+    margin-left: auto;
+  }
+
+  /* share button */
+  .card-social-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 2.307rem;
+    height: 2.307rem;
+    border: none;
+    background-color: var(--Light-Grayish-Blue);
+    transition:all 0.5s;
+    z-index: 999;
+    cursor: pointer;
+  }
+
+  .card-social-btn-click{
+    position: absolute;
+    right: 2.461rem;
+    bottom: 1.942rem;
+    z-index: 999;
+    background-color: var(--Desaturated-Dark-Blue);
+    i{
+      color: white !important;
+    }
+
+  }
+
+  .card-social-btn i{
+    transition:all 0.5s;
+  }
+
+  .card-social-btn:hover{
+    background-color: var(--Desaturated-Dark-Blue);
+    i{
+      color: white !important;
+    }
+  }
+ 
+  /* social links section */
+  .card-social-links{
+    display:none;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    height: 6.192rem;
+    width: 100%;
+    bottom: 0%;
+    right: 0%;
+    border-radius: 0rem 0rem 1.153rem 1.153rem;
+    background-color: var(--Very-Dark-Grayish-Blue);
+  }
+
+  .card-social-links-click{
+    display: flex ;
+    animation: anim3;
+    animation-duration: 0.5s;
+  }
+
+  .card-social-link-text{
+    margin-left: 2.461rem;
+    margin-right: 1.692rem;
+    color: var(--Grayish-Blue);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.461rem;
+
+  }
+
+  .card-social-link-icon img{
+    margin-right: 1.23rem;
+    transition: all 0.4s;
+  }
+
+  .card-social-link-icon img:hover{
+    transform:translateY(-0.307rem);
+  }
+
+  /* Responsive */
+  @media only screen and (min-width: 46.153rem) {
+
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-container{
+      max-width: 100%;
+      display: grid;
+      grid-template-columns:21.923rem 34.23rem;
+      grid-template-rows: 21.538rem;
+    }
+
+    .card-img{
+      grid-column: 1/1;
+      border-radius: 1.153rem 0rem 0rem 1.153rem;
+      height: 21.538rem;
+    }
+
+    /* card info section */
+    .card-info{
+      grid-column: 2/2;
+      height: 21.538rem;
+    }
+
+    article{
+      margin: 2.437rem 0rem 1.25rem 0rem;
+    }
+    
+    .card-title{
+      font-size: 1.692rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .card-profile{
+      margin-bottom: 2.461rem;
+    }
+
+    /* share button */
+    .card-social-btn-click{
+      position: initial;
+      transform: rotate(-90deg);
+    }
+
+    .card-social-btn:hover{
+      transform: rotate(-90deg);
+    }
+
+    /* social links section */
+    .card-social-links{
+      width: 19.076rem;
+      height: 4.23rem;
+      border-radius:1.153rem;
+      left:42.307rem;
+      bottom: 7.30rem;
+      animation: anim1;
+      animation-duration: 0.3s;
+    }
+
+    /* social links arrow section */
+    .card-sotial-arrow{
+      display: none;
+      width: 1.8461rem;
+      height: 1.8461rem;
+      background-color: var(--Very-Dark-Grayish-Blue);
+      transform: rotate(45deg);
+      border-radius: 0.15rem;
+      position: absolute;
+      bottom: 6.461rem;
+      
+    }
+
+    .card-sotial-arrow-click{
+      display: block;
+      animation: anim2;
+      animation-duration: 0.3s;
+    }
+  
+  }
