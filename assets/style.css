@@ -196,6 +196,10 @@
 
   }
 
+  #none{
+    display: none;
+  }
+
   .card-social-btn i{
     transition:all 0.5s;
   }
